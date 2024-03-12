@@ -1,0 +1,25 @@
+vampire = {
+	icon = vampire.dds
+	desc = trait_dragon_rider_desc
+	fame = yes
+	ruler_designer_cost = 200
+	random_creation = 0.001
+
+	health = 10
+	martial = 6
+    learning = 3
+	prowess = 13
+    clergy_opinion = -100
+}
+# For children of vampires
+blood_of_vampire = {
+	icon = blood_of_vampire.dds
+	desc = trait_dragon_rider_desc
+	fame = yes
+	ruler_designer_cost = 50
+
+	martial = 2
+    learning = 1
+	prowess = 4
+    clergy_opinion = -30
+}

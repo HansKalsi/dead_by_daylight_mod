@@ -1,0 +1,76 @@
+get_vampire_trait_decision = {
+    picture = "gfx/interface/illustrations/decisions/decision_major_religion.dds",
+    desc = get_vampire_trait_desc,
+    major = yes,
+
+    cooldown = {
+        years = 5
+    }
+
+    ai_will_do = 10,
+
+    is_shown = {
+        is_landed = yes,
+        not = {
+            has_trait = vampire
+        }
+    }
+
+    cost = {
+        gold = 666,
+        piety = 666,
+    }
+
+    is_valid = {
+        gold > 665,
+        piety_level >= 2,
+        not = {
+            has_trait = vampire
+        }
+    }
+
+    effect = {
+        trigger_event = vampire_event.0001,
+        hidden_effect = {
+			add_piety_level = -2
+		}
+		show_as_tooltip = {
+			add_piety_level = -2
+		}
+    }
+}
+
+feed_decision = {
+    picture = "gfx/interface/illustrations/decisions/fp1_decisons_hold_bolt.dds",
+    desc = feed_desc,
+    
+    cooldown = {
+        years = 1
+    }
+
+    ai_goal = yes,
+    ai_will_do = 100,
+
+    is_shown = {
+        has_trait = vampire,
+        not = {
+            has_character_modifier = vampire_fed
+        }
+    }
+
+    cost = {
+        piety = 250
+    }
+
+    is_valid = {
+        has_trait = vampire,
+        piety > 249,
+        not = {
+            has_character_modifier = vampire_fed
+        }
+    }
+
+    effect = {
+        trigger_event = vampire_event.0004
+    }
+}

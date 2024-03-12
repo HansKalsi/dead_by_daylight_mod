@@ -1,0 +1,302 @@
+namespace = vampire_event
+
+# Get Vampire Trait Event Chain
+# The Ritual
+vampire_event.0001 = {
+    type = character_event
+    title = vampire_event.0001.t
+    desc = vampire_event.0001.desc
+
+	theme = death
+	left_portrait = root
+
+	immediate = {
+		play_music_cue = mx_cue_stress
+	}
+
+    # Has blood of vampire and can skip ritual
+    option = {
+        name = vampire_event.0001.a
+        ai_chance = { factor = 1000 }
+        trigger = {
+            has_trait = blood_of_vampire
+        }
+        show_as_unavailable = {
+            NOT = {
+                has_trait = blood_of_vampire
+            }
+        }
+        trigger_event = vampire_event.0002
+    }
+    # Ritual with 33.3% chance of success
+    option = {
+        name = vampire_event.0001.b
+        ai_chance = { factor = 100 }
+		random_list = {
+			34 = {
+                trigger_event = vampire_event.0002
+				custom_tooltip = successful_ritual.tt
+			}
+            66 = {
+                trigger_event = vampire_event.0003
+			    custom_tooltip = failed_ritual.tt
+            }
+		}
+    }
+    # Back out of ritual
+    option = {
+        name = vampire_event.0001.c
+        ai_chance = { factor = 0 }
+        add_gold = 333
+        add_piety = 333
+    }
+}
+# The Transformation (successful ritual)
+vampire_event.0002 = {
+    type = character_event
+    title = vampire_event.0002.t
+    desc = vampire_event.0002.desc
+
+    theme = death
+    left_portrait = root
+
+    option = {
+        name = vampire_event.0002.a
+        ai_chance = { factor = 100 }
+        add_trait = vampire
+    }
+}
+# The Aftermath (failed ritual)
+vampire_event.0003 = {
+    type = character_event
+    title = vampire_event.0003.t
+    desc = vampire_event.0003.desc
+
+    left_portrait = root
+    theme = death
+
+    immediate = {
+        play_music_cue = mx_cue_stress
+    }
+
+    option = {
+        name = vampire_event.0003.a
+        ai_chance = { factor = 100 }
+        death = {
+            death_reason = death_laughter
+        }
+    }
+}
+
+# Feed Events
+vampire_event.0004 = {
+    type = character_event
+    title = vampire_event.0004.t
+    desc = vampire_event.0004.desc
+
+    theme = death
+    left_portrait = root
+    lower_left_portrait = scope:potential_victim_one
+    right_portrait = scope:potential_victim_two
+    lower_right_portrait = scope:potential_victim_three
+
+    immediate = {
+        play_music_cue = mx_cue_stress
+        hidden_effect = {
+            random_pool_character = {
+                province = capital_province
+                limit = {
+                    NOT = {
+                        OR = {
+                            has_trait = vampire
+                            has_trait = blood_of_vampire
+                        }
+                    }
+                }
+                save_scope_as = potential_victim_one
+                # Backup generation in case of no victim found
+                if = {
+                    limit = {
+                        NOT = {
+                            exists = scope:potential_victim_one
+                        }
+                    }
+                    create_character = {
+                        location = root.capital_province
+                        gender_female_chance = 50
+                        template_character = root
+                        random_traits = yes
+                        age = { 18 50 }
+                        save_scope_as = potential_victim_one
+                    }
+                }
+            }
+            random_pool_character = {
+                province = capital_province
+                limit = {
+                    NOT = {
+                        OR = {
+                            has_trait = vampire
+                            has_trait = blood_of_vampire
+                        }
+                    }
+                }
+                save_scope_as = potential_victim_two
+                # Backup generation in case of no victim found
+                if = {
+                    limit = {
+                        NOT = {
+                            exists = scope:potential_victim_two
+                        }
+                    }
+                    create_character = {
+                        location = root.capital_province
+                        gender_female_chance = 50
+                        template_character = root
+                        random_traits = yes
+                        age = { 18 50 }
+                        save_scope_as = potential_victim_two
+                    }
+                }
+            }
+            random_pool_character = {
+                province = capital_province
+                limit = {
+                    NOT = {
+                        OR = {
+                            has_trait = vampire
+                            has_trait = blood_of_vampire
+                        }
+                    }
+                }
+                save_scope_as = potential_victim_three
+                # Backup generation in case of no victim found
+                if = {
+                    limit = {
+                        NOT = {
+                            exists = scope:potential_victim_three
+                        }
+                    }
+                    create_character = {
+                        location = root.capital_province
+                        gender_female_chance = 50
+                        template_character = root
+                        random_traits = yes
+                        age = { 18 50 }
+                        save_scope_as = potential_victim_three
+                    }
+                }
+            }
+        }
+    }
+
+    # Kill potential victim one
+    option = {
+        name = vampire_event.0004.a
+        ai_chance = { factor = 100 }
+        if = {
+            limit = {
+                has_character_modifier = vampire_starving
+            }
+            remove_character_modifier = vampire_starving
+        }
+        add_character_modifier = {
+            modifier = vampire_fed
+            years = 3
+        }
+        scope:potential_victim_one = {
+            death = {
+                death_reason = death_laughter
+            }
+        }
+    }
+    # Kill potential victim two
+    option = {
+        name = vampire_event.0004.b
+        ai_chance = { factor = 100 }
+        if = {
+            limit = {
+                has_character_modifier = vampire_starving
+            }
+            remove_character_modifier = vampire_starving
+        }
+        add_character_modifier = {
+            modifier = vampire_fed
+            years = 3
+        }
+        scope:potential_victim_two = {
+            death = {
+                death_reason = death_laughter
+            }
+        }
+    }
+    # Kill potential victim three
+    option = {
+        name = vampire_event.0004.c
+        ai_chance = { factor = 100 }
+        if = {
+            limit = {
+                has_character_modifier = vampire_starving
+            }
+            remove_character_modifier = vampire_starving
+        }
+        add_character_modifier = {
+            modifier = vampire_fed
+            years = 3
+        }
+        scope:potential_victim_three = {
+            death = {
+                death_reason = death_laughter
+            }
+        }
+    }
+    # Don't kill anyone
+    option = {
+        name = vampire_event.0004.d
+        ai_chance = { factor = 0 }
+    }
+}
+# Fed
+vampire_event.0005 = {
+    type = character_event
+    title = vampire_event.0005.t
+    desc = vampire_event.0005.desc
+
+    theme = death
+    left_portrait = root
+
+    option = {
+        name = vampire_event.0005.a
+        ai_chance = { factor = 100 }
+        if = {
+            limit = {
+                has_character_modifier = vampire_starving
+            }
+            remove_character_modifier = vampire_starving
+        }
+		add_character_modifier = {
+			modifier = vampire_fed
+			years = 3
+		}
+    }
+
+}
+# Starved
+vampire_event.0006 = {
+    type = character_event
+    title = vampire_event.0006.t
+    desc = vampire_event.0006.desc
+
+    theme = death
+    left_portrait = root
+
+    immediate = {
+        play_music_cue = mx_cue_stress
+    }
+
+    option = {
+        name = vampire_event.0006.a
+        ai_chance = { factor = 100 }
+		add_character_modifier = vampire_starving
+    }
+}

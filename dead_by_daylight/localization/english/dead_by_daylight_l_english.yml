@@ -1,0 +1,13 @@
+# Get Vampire Trait decision
+get_vampire_trait_decision:0 "get vampire trait"
+get_vampire_trait_decision_desc:0 "get vampire trait DESCRIPTION"
+get_vampire_trait_decision_tooltip:0 "get vampire trait TOOLTIP"
+
+successful_ritual.tt:0 "The ritual goes smoothly"
+failed_ritual.tt:0 "The ritual fails"
+
+# Feed decision
+feed_decision:0 "feed"
+feed_decision_desc:0 "feed DESCRIPTION"
+feed_decision_tooltip:0 "feed TOOLTIP"
+

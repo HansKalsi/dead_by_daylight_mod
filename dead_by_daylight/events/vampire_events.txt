@@ -265,6 +265,10 @@ vampire_event.0005 = {
     theme = death
     left_portrait = root
 
+    trigger = {
+        has_trait = vampire
+    }
+
     option = {
         name = vampire_event.0005.a
         ai_chance = { factor = 100 }
@@ -292,6 +296,13 @@ vampire_event.0006 = {
 
     immediate = {
         play_music_cue = mx_cue_stress
+    }
+
+    trigger = {
+        has_trait = vampire
+        not = {
+            has_character_modifier = vampire_fed
+        }
     }
 
     option = {

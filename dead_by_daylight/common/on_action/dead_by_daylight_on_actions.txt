@@ -1,5 +1,11 @@
 yearly_global_pulse = {
+	on_actions = {
+		vampires_starving_on_action
+	}
+}
+
+vampires_starving_on_action = {
 	events = {
-		vampire_event.0005
+		vampire_event.0006
 	}
 }

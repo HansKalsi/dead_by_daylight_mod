@@ -1,12 +1,12 @@
 vampire_fed = {
-	icon = feast_positive,
-	health = 10,
-	dread_baseline_add = 20,
-    prowess = 7,
+	icon = feast_positive
+	health = 10
+	dread_baseline_add = 20
+    prowess = 7
 }
 
 vampire_starving = {
-    icon = feast_negative,
-    health = -3,
-    prowess = -7,
+    icon = feast_negative
+    health = -3
+    prowess = -7
 }

@@ -27,6 +27,7 @@ vampire_event.0001 = {
             }
         }
         trigger_event = vampire_event.0002
+        custom_tooltip = successful_ritual.tt
     }
     # Ritual with 33.3% chance of success
     option = {

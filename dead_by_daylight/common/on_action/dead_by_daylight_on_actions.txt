@@ -9,3 +9,25 @@ vampires_starving_on_action = {
 		vampire_event.0006
 	}
 }
+
+on_birth_child = {
+	on_actions = {
+		vampire_children_on_action
+	}
+}
+
+vampire_children_on_action = {
+	effect = {
+		if = {
+			limit = {
+				scope:mother = {
+					has_trait = vampire
+				}
+				scope:real_father = {
+					has_trait = vampire
+				}
+			}
+			add_trait = blood_of_vampire
+		}
+	}
+}

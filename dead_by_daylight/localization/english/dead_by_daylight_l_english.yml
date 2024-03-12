@@ -1,13 +1,13 @@
-# Get Vampire Trait decision
-get_vampire_trait_decision:0 "get vampire trait"
-get_vampire_trait_decision_desc:0 "get vampire trait DESCRIPTION"
-get_vampire_trait_decision_tooltip:0 "get vampire trait TOOLTIP"
+﻿l_english:
+ # Get Vampire Trait decision
+ get_vampire_trait_decision:0 "The Secret Ritual"
+ get_vampire_trait_decision_desc:0 "Whispers of ancient rites and forbidden knowledge reach your ears, promising power beyond mortal comprehension."
+ get_vampire_trait_decision_tooltip:0 "Initiating this dark voyage may grant untold power but beware, for the path is fraught with dangers unknown."
 
-successful_ritual.tt:0 "The ritual goes smoothly"
-failed_ritual.tt:0 "The ritual fails"
+ successful_ritual.tt:0 "The ritual goes smoothly"
+ failed_ritual.tt:0 "The ritual fails"
 
-# Feed decision
-feed_decision:0 "feed"
-feed_decision_desc:0 "feed DESCRIPTION"
-feed_decision_tooltip:0 "feed TOOLTIP"
-
+ # Feed decision
+ feed_decision:0 "A Midnight Snack"
+ feed_decision_desc:0 "The night calls, and the hunger within cannot be ignored. Select a target to quench your thirst."
+ feed_decision_tooltip:0 "Feeding will grant you additional vitality and strength, but be mindful of who you sink your fangs into."

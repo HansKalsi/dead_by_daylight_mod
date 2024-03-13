@@ -3,11 +3,58 @@
  get_vampire_trait_decision:0 "The Secret Ritual"
  get_vampire_trait_decision_desc:0 "Whispers of ancient rites and forbidden knowledge reach your ears, promising power beyond mortal comprehension."
  get_vampire_trait_decision_tooltip:0 "Initiating this dark voyage may grant untold power but beware, for the path is fraught with dangers unknown."
+ get_vampire_trait_decision_confirm:0 "Begin the Ritual"
 
  successful_ritual.tt:0 "The ritual goes smoothly"
  failed_ritual.tt:0 "The ritual fails"
+
+ # The Ritual event
+ vampire_event.0001.t:0 "The Blood Moon Beckons"
+ vampire_event.0001.desc:0 "The night is dark and full of terrors. The moon is full, and the air is thick with the scent of blood. The time has come to embrace the darkness and become something more."
+ vampire_event.0001.a:0 "Embrace your birthright"
+ vampire_event.0001.b:0 "Conduct the ritual"
+ vampire_event.0001.c:0 ""I've got to get out of here!""
+
+ # The Transformation event (successful ritual)
+ vampire_event.0002.t:0 "The Transformation"
+ vampire_event.0002.desc:0 "The ritual is complete, and the darkness within you stirs. The hunger is overwhelming, and the thirst for blood is unquenchable. You are no longer human, but something more... something... better..."
+ vampire_event.0002.a:0 "Embrace the darkness"
+
+ # The Aftermath event (failed ritual)
+ vampire_event.0003.t:0 "The Bloody Aftermath"
+ vampire_event.0003.desc:0 "The ritual has failed, and the darkness within you is unleashed. The hunger is overwhelming, and the thirst for blood is unquenchable. You begin to burst out into laugher uncontrollably... This doesn't feel right..."
+ vampire_event.0003.a:0 "Be overwhelmed by the darkness"
 
  # Feed decision
  feed_decision:0 "A Midnight Snack"
  feed_decision_desc:0 "The night calls, and the hunger within cannot be ignored. Select a target to quench your thirst."
  feed_decision_tooltip:0 "Feeding will grant you additional vitality and strength, but be mindful of who you sink your fangs into."
+ feed_decision_confirm:0 "Time to Hunt"
+
+ # Feed event
+ vampire_event.0004.t:0 "The Hunt"
+ vampire_event.0004.desc:0 "The hunt is on, and the scent of blood is thick in the air. You can feel the hunger within you growing stronger with each passing moment. The time has come to feed... But whom shall it be this time?"
+ vampire_event.0004.a:0 "Eeny"
+ vampire_event.0004.b:0 "Meeny"
+ vampire_event.0004.c:0 "Miny"
+ vampire_event.0004.d:0 ""I don't want to hurt anyone...""
+
+ # Fed event
+ vampire_event.0005.t:0 "The Feast"
+ vampire_event.0005.desc:0 "The hunt is over, and the hunger within you is sated. The taste of blood is sweet, and the vitality it grants you is intoxicating. You are stronger now, and the darkness within you is more powerful than ever before... While it lasts..."
+ vampire_event.0005.a:0 "*Licks lips*"
+
+ # Starving event
+ vampire_event.0006.t:0 "The Thirst"
+ vampire_event.0006.desc:0 "The hunger within you is overwhelming, and the thirst for blood is unquenchable. You can feel the darkness within you growing weaker with each passing moment. The time has come to feed..."
+ vampire_event.0006.a:0 ""I need it!""
+
+ # Vampire Traits
+ trait_vampire:0 "Vampire"
+ trait_vampire_desc:0 "A blood sucking creature of the night, the vampire is a fearsome predator that feeds on the living to sustain its unholy existence. The vampire is a master of stealth and deception, and its supernatural abilities make it a formidable foe."
+ trait_blood_of_vampire:0 "Blood of the Vampire"
+ trait_blood_of_vampire_desc:0 "As a child of a vampire, they have inherited some of their supernatural abilities. They are faster, stronger, and more resilient than a normal human, and their senses are heightened to an almost preternatural level."
+
+ # Vampire Modifiers
+ vampire_fed:0 "Fed"
+ vampire_starving:0 "Starving"

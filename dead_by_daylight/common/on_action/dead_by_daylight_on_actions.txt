@@ -1,12 +1,12 @@
-yearly_global_pulse = {
+yearly_playable_pulse = {
 	on_actions = {
 		vampires_starving_on_action
 	}
 }
 
 vampires_starving_on_action = {
-	events = {
-		vampire_event.0006
+	effect = {
+		trigger_event = vampire_event.0006
 	}
 }
 
@@ -20,11 +20,19 @@ vampire_children_on_action = {
 	effect = {
 		if = {
 			limit = {
-				scope:mother = {
-					has_trait = vampire
-				}
-				scope:real_father = {
-					has_trait = vampire
+				OR = {
+					scope:mother = {
+						OR = {
+							has_trait = vampire
+							has_trait = blood_of_vampire
+						}
+					}
+					scope:real_father = {
+						OR = {
+							has_trait = vampire
+							has_trait = blood_of_vampire
+						}
+					}
 				}
 			}
 			add_trait = blood_of_vampire

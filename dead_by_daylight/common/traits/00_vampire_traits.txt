@@ -1,6 +1,5 @@
 vampire = {
 	icon = vampire.dds
-	desc = trait_dragon_rider_desc
 	physical = yes
 	ruler_designer_cost = 200
 	random_creation = 0.001
@@ -14,7 +13,6 @@ vampire = {
 # For children of vampires
 blood_of_vampire = {
 	icon = blood_of_vampire.dds
-	desc = trait_dragon_rider_desc
 	physical = yes
 	genetic = yes
 	good = yes
